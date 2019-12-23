@@ -1,6 +1,6 @@
 // src
-@import "../utilities/utility-fonts";
-@import "../utilities/palettes/all";
-@import "../utilities/rules/all";
-@import "../utilities/rules/package";
-@include render-utilities-in($utilities-package);
+@use "../utilities/utility-fonts";
+@use "../utilities/palettes/all";
+@use "../utilities/rules/all" as all2;
+@use "../utilities/rules/package";
+@include render-utilities-in(package.$utilities-package);

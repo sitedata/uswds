@@ -1,3 +1,6 @@
+@use "colors/all-colors-palettes";
+@use "font-palettes";
+
 /*
 ========================================
 STANDARD PLUGINS
@@ -21,7 +24,7 @@ $palettes-default: (
   "palette-color-default":
     map-collect(
       $tokens-color-basic,
-      $tokens-color-grayscale,
+      all-colors-palettes.$tokens-color-grayscale,
       $tokens-color-theme
     ),
   "palette-cursor-default": get-standard-values(cursor),
@@ -30,7 +33,7 @@ $palettes-default: (
   "palette-flex-direction-default": get-standard-values(flex-direction),
   "palette-flex-wrap-default": get-standard-values(flex-wrap),
   "palette-float-default": get-standard-values(float),
-  "palette-font-default": $tokens-font-theme,
+  "palette-font-default": font-palettes.$tokens-font-theme,
   "palette-font-family-default": get-standard-values(font-family),
   "palette-font-feature-settings-default":
     get-standard-values(font-feature-settings),

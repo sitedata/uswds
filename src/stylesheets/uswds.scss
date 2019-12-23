@@ -2,16 +2,16 @@
 
 // Required
 // -------------------------------------
-@import "packages/required";
+@use "packages/required";
 
 // Global
 // -------------------------------------
-@import "packages/global";
+@use "packages/global";
 
 // Components
 // -------------------------------------
-@import "packages/uswds-components";
+@use "packages/uswds-components";
 
 // Utilities
 // -------------------------------------
-@import "packages/uswds-utilities";
+@use "packages/uswds-utilities";

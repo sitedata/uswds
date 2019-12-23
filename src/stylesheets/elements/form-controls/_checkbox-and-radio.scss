@@ -1,3 +1,5 @@
+@use "global";
+
 @include override-prose {
   .usa-input-list {
     @include add-list-reset;
@@ -32,9 +34,9 @@
   display: inherit;
   font-weight: font-weight("normal");
   margin-bottom: units(1.5);
-  padding-left: units($input-select-margin-right + $theme-input-select-size);
+  padding-left: units(global.$input-select-margin-right + $theme-input-select-size);
   position: relative;
-  text-indent: units(-$input-select-margin-right - $theme-input-select-size);
+  text-indent: units(-(global.$input-select-margin-right) - $theme-input-select-size);
 }
 
 .usa-checkbox__label::before,
@@ -60,7 +62,7 @@
 .usa-radio__label::before {
   box-shadow: 0 0 0 units($theme-input-select-border-width) color("base");
   line-height: units($theme-input-select-size);
-  margin-right: units($input-select-margin-right);
+  margin-right: units(global.$input-select-margin-right);
 }
 
 .usa-checkbox__input:checked + .usa-checkbox__label::before,

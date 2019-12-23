@@ -1,3 +1,4 @@
+@use "sass:map";
 // Alert variables ---------- //
 // TODO: Custom alerts are effectively hidden and not well supported
 // Consider removing or rebuilding
@@ -18,8 +19,8 @@ $usa-alerts-bar: (
   info: "info"
 );
 
-$alerts: map-merge($usa-alerts, $usa-custom-alerts);
-$alerts-bar: map-merge($usa-alerts-bar, $usa-custom-alerts-bar);
+$alerts: map.merge($usa-alerts, $usa-custom-alerts);
+$alerts-bar: map.merge($usa-alerts-bar, $usa-custom-alerts-bar);
 $alert-padding-left: units($theme-alert-padding-x) +
   units($theme-alert-bar-width);
 
@@ -97,7 +98,7 @@ $alert-padding-left: units($theme-alert-padding-x) +
     background-color: color($bgcolor);
 
     &::before {
-      background-color: color(map-get($alerts-bar, $name));
+      background-color: color(map.get($alerts-bar, $name));
     }
 
     .usa-alert__body {
