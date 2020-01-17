@@ -2,6 +2,7 @@ const log = require("fancy-log");
 const colors = require("ansi-colors");
 const notifier = require("node-notifier");
 const pkg = require("../../package.json");
+const {changelog} = require("./changelog.js")
 
 const shellPrefix = "$";
 
@@ -38,6 +39,7 @@ module.exports = {
     const introMessage = message || "USWDS";
     log(colors.yellow(`${introMessage} v${pkg.version}`));
     drawFlag();
+    log(`${changelog}`);
   },
 
   logCommand(name, message) {
