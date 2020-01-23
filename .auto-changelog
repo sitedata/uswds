@@ -1,0 +1,6 @@
+{
+  "output": "CHANGELOG.md",
+  "template": "uswds-changelog.hbs",
+  "unreleased": true,
+  "commitLimit": false
+}

@@ -1,6 +1,13 @@
 const message = `
   --------------------------------------------------------------------
-  ✉️   USWDS Notifications
+  ✉️  USWDS Notifications
+  --------------------------------------------------------------------
+  2.4.1: Changelog notification was moved to 'changelog.js' and included
+  it as part of the introduction task ie 'gulp build'. You can also checkout
+  CHANGELOG.md if your setup simply imports the framework.
+
+  - We've removed '$theme-show-notifications' from general settings
+  - We've moved '_notifications.scss' to changelog.js and CHANGELOG.md
   --------------------------------------------------------------------
   2.4.0: If your component settings aren't working as expected, make
   sure you're importing the components settings in your Sass entry
@@ -24,8 +31,7 @@ const message = `
   These are notifications from the USWDS team, not necessarily a
   problem with your code.
 
-  Disable notifications using '$theme-show-notifications: false'
-  in your general settings file.
+  For more information see CHANGELOG.md
   --------------------------------------------------------------------`;
 
 module.exports = { changelog: message };
