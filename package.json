@@ -21,7 +21,7 @@
     "mocha": "mocha --opts spec/mocha.opts",
     "prepare": "gulp build",
     "preversion": "npm test",
-    "release": "gulp release",
+    "release": "gulp release && npm run changelog",
     "spec": "npm run mocha -- 'spec/**/*.spec.js'",
     "start": "fractal start --sync & npm run watch",
     "test": "snyk test && gulp eslint && gulp typecheck && gulp stylelint && gulp test && gulp regression",
