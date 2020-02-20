@@ -1,3 +1,5 @@
+@use "position";
+
 $utility-pin-options: "all", "x", "y", "top", "bottom", "left", "right", "none";
 
 @mixin u-pin($value...) {
@@ -14,7 +16,7 @@ $utility-pin-options: "all", "x", "y", "top", "bottom", "left", "right", "none";
   @each $option in $value {
     $option: smart-quote($option);
     @if $option != "none" and not $has-position {
-      @include u-position($position-absolute);
+      @include position.u-position($position-absolute);
       $has-position: true;
     }
     @if $option == "all" {
@@ -38,7 +40,7 @@ $utility-pin-options: "all", "x", "y", "top", "bottom", "left", "right", "none";
       right: 0#{$important};
     } @else if $option == "none" {
       $has-position: false;
-      @include u-position($position-static);
+      @include position.u-position($position-static);
       bottom: auto#{$important};
       left: auto#{$important};
       right: auto#{$important};

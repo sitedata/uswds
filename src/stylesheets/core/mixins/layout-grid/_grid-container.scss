@@ -1,14 +1,20 @@
+@use "sass:list";
+@use "../add-responsive-site-margins";
+@use "../border-box-sizing";
+@use "../utilities/margin";
+@use "../utilities/max-width";
+
 @mixin grid-container($props...) {
-  @if length($props) ==0 {
-    @include u-margin-x(auto);
-    @include u-maxw($theme-grid-container-max-width);
+  @if list.length($props) ==0 {
+    @include margin.u-margin-x(auto);
+    @include max-width.u-maxw($theme-grid-container-max-width);
   } @else {
-    $props: nth($props, 1);
+    $props: list.nth($props, 1);
     $margin-x: append-important($props, auto);
-    @include u-margin-x($margin-x);
-    @include u-maxw($props);
+    @include margin.u-margin-x($margin-x);
+    @include max-width.u-maxw($props);
   }
 
-  @include add-responsive-site-margins;
-  @include this-border-box-sizing;
+  @include add-responsive-site-margins.add-responsive-site-margins;
+  @include border-box-sizing.this-border-box-sizing;
 }

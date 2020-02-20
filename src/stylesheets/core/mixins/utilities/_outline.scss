@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
 // Outputs a solid outline of $value... width
 @mixin u-outline($value...) {
   $important: null;
@@ -9,23 +12,23 @@
   @each $this-value in $value {
     $this-value: smart-quote($this-value);
     $match: false;
-    @if map-has-key($all-color-shortcodes, $this-value) {
+    @if map.has-key($all-color-shortcodes, $this-value) {
       $match: true;
       outline-color: color(smart-quote($this-value)) #{$important};
-    } @else if map-has-key($widths, $this-value) {
+    } @else if map.has-key($widths, $this-value) {
       $match: true;
-      $final-value: map-get($widths, $this-value);
-      outline-width: unquote("#{$final-value}#{$important}");
+      $final-value: map.get($widths, $this-value);
+      outline-width: string.unquote("#{$final-value}#{$important}");
       outline-style: solid#{$important};
-    } @else if type-of($this-value) == "number" {
+    } @else if meta.type-of($this-value) == "number" {
       $converted-value: number-to-token($this-value);
-      @if map-has-key($widths, $converted-value) {
+      @if map.has-key($widths, $converted-value) {
         $match: true;
-        $final-value: map-get($widths, $converted-value);
-        outline-width: unquote("#{$final-value}#{$important}");
+        $final-value: map.get($widths, $converted-value);
+        outline-width: string.unquote("#{$final-value}#{$important}");
         outline-style: solid#{$important};
       } @else {
-        @error '#{$this-value} is not a valid outline width. Accepted values: #{map-keys($widths)}';
+        @error '#{$this-value} is not a valid outline width. Accepted values: #{map.keys($widths)}';
       }
     }
     @if not $match {

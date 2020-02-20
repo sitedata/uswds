@@ -1,3 +1,7 @@
+@use "typography";
+@use "usa-list-styles";
+@use "usa-table-styles";
+
 @mixin usa-paragraph-style {
   p {
     @extend %usa-paragraph;
@@ -6,7 +10,7 @@
 
 @mixin usa-link-style {
   a {
-    @include typeset-link;
+    @include typography.typeset-link;
   }
 }
 
@@ -21,27 +25,27 @@
   }
 
   h1 {
-    @include h1;
+    @include typography.h1;
   }
 
   h2 {
-    @include h2;
+    @include typography.h2;
   }
 
   h3 {
-    @include h3;
+    @include typography.h3;
   }
 
   h4 {
-    @include h4;
+    @include typography.h4;
   }
 
   h5 {
-    @include h5;
+    @include typography.h5;
   }
 
   h6 {
-    @include h6;
+    @include typography.h6;
   }
 }
 
@@ -49,6 +53,6 @@
   @include usa-paragraph-style;
   @include usa-link-style;
   @include usa-headings-styles;
-  @include usa-list-styles;
-  @include usa-table-styles;
+  @include usa-list-styles.usa-list-styles;
+  @include usa-table-styles.usa-table-styles;
 }

@@ -1,7 +1,11 @@
+@use "../border-box-sizing";
+@use "../utilities/display";
+@use "../utilities/flex";
+
 @mixin grid-row($props...) {
   $display: append-important($grid-global, flex);
   $flex: append-important($grid-global, wrap);
-  @include u-display($display);
-  @include u-flex($flex);
-  @include this-border-box-sizing;
+  @include display.u-display($display);
+  @include flex.u-flex($flex);
+  @include border-box-sizing.this-border-box-sizing;
 }

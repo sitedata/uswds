@@ -1,6 +1,9 @@
+@use "at-media";
+@use "utilities/padding";
+
 @mixin add-responsive-site-margins {
-  @include u-padding-x($theme-site-margins-mobile-width);
-  @include at-media($theme-site-margins-breakpoint) {
-    @include u-padding-x($theme-site-margins-width);
+  @include padding.u-padding-x($theme-site-margins-mobile-width);
+  @include at-media.at-media($theme-site-margins-breakpoint) {
+    @include padding.u-padding-x($theme-site-margins-width);
   }
 }

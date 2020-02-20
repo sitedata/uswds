@@ -1,6 +1,8 @@
+@use "add-background-svg";
+
 @mixin display-icon($icon, $direction, $size, $margin, $hover) {
   &::#{$direction} {
-    @include add-background-svg("#{$icon}");
+    @include add-background-svg.add-background-svg("#{$icon}");
     background-size: 100%;
     content: "";
     display: inline-block;
@@ -18,7 +20,7 @@
 
   @if $hover == "hover" {
     &:hover::#{$direction} {
-      @include add-background-svg("#{$icon}-hover");
+      @include add-background-svg.add-background-svg("#{$icon}-hover");
     }
   }
 }
@@ -38,7 +40,7 @@
   $hover
 ) {
   &::#{$direction} {
-    @include add-background-svg("#{$icon-name}");
+    @include add-background-svg.add-background-svg("#{$icon-name}");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: units($image-size);
@@ -58,7 +60,7 @@
 
   @if $hover == "hover" {
     &:hover::#{$direction} {
-      @include add-background-svg("#{$icon-name}-hover");
+      @include add-background-svg.add-background-svg("#{$icon-name}-hover");
     }
   }
 }

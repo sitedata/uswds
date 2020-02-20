@@ -1,9 +1,13 @@
+@use "border-radius";
+@use "height";
+@use "width";
+
 // Outputs a square
 @mixin u-circle($value...) {
   $value: unpack($value);
   $dimension: $value;
   $radius: append-important($value, pill);
-  @include u-height($dimension);
-  @include u-radius($radius);
-  @include u-width($dimension);
+  @include height.u-height($dimension);
+  @include border-radius.u-radius($radius);
+  @include width.u-width($dimension);
 }

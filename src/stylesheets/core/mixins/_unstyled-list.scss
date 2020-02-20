@@ -1,6 +1,8 @@
+@use "utilities/margin";
+
 // Unstyled list helper
 @mixin unstyled-list() {
-  @include u-margin-y(0);
+  @include margin.u-margin-y(0);
   list-style-type: none;
   padding-left: 0;
 

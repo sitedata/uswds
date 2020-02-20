@@ -1,5 +1,7 @@
+@use "add-knockout-font-smoothing";
+
 @mixin button-disabled {
-  @include add-knockout-font-smoothing;
+  @include add-knockout-font-smoothing.add-knockout-font-smoothing;
   background-color: color("disabled");
   color: color("white");
   pointer-events: none;

@@ -1,3 +1,4 @@
+@use "sass:map";
 // Outputs properties based on contents of text()
 
 $text-utililies: (
@@ -53,12 +54,12 @@ $text-utililies: (
   @each $this-value in $value {
     $this-value: smart-quote($this-value);
     $match: false;
-    @if map-has-key($all-color-shortcodes, $this-value) {
+    @if map.has-key($all-color-shortcodes, $this-value) {
       $match: true;
       color: color($this-value) #{$important};
     } @else {
       @each $property, $map in $text-utililies {
-        @if not $match and map-has-key($map, $this-value) {
+        @if not $match and map.has-key($map, $this-value) {
           #{$property}: get-uswds-value($property, $this-value...)
             #{$important};
           $match: true;

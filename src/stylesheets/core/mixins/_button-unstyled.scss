@@ -1,6 +1,9 @@
+@use "add-knockout-font-smoothing";
+@use "typography";
+
 @mixin button-unstyled {
-  @include no-knockout-font-smoothing;
-  @include typeset-link;
+  @include add-knockout-font-smoothing.no-knockout-font-smoothing;
+  @include typography.typeset-link;
   background-color: transparent;
   border: 0;
   border-radius: 0;
@@ -12,7 +15,7 @@
 
   &:hover,
   &:active {
-    @include no-knockout-font-smoothing;
+    @include add-knockout-font-smoothing.no-knockout-font-smoothing;
     background-color: transparent;
     box-shadow: none;
     text-decoration: underline;

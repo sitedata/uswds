@@ -1,3 +1,4 @@
+@use "sass:string";
 @mixin add-bar(
   $weight: 1,
   $color: "ink",
@@ -26,12 +27,12 @@
       bottom: units($offset-y);
       top: units($offset-y);
       width: units($weight);
-      #{unquote($side)}: units($offset-x);
+      #{string.unquote($side)}: units($offset-x);
     } @else {
       height: units($weight);
       left: units($offset-x);
       right: units($offset-x);
-      #{unquote($side)}: units($offset-y);
+      #{string.unquote($side)}: units($offset-y);
     }
   }
 }

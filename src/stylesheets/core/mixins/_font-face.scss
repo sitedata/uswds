@@ -1,14 +1,16 @@
+@use "sass:map";
+@use "sass:string";
 // Output the @font-face rule
 @mixin at-font-face($display-name, $file-path, $font-weight, $font-style) {
-  $file-path: unquote($file-path);
+  $file-path: string.unquote($file-path);
 
   // TODO: If $theme-use-rails-pipeline use font-url() statements
   // instead of url()
   // Dunno why I can't do this without an error...
 
   @font-face {
-    font-family: unquote($display-name);
-    font-style: unquote($font-style);
+    font-family: string.unquote($display-name);
+    font-style: string.unquote($font-style);
     font-weight: $font-weight;
     font-display: fallback;
     src: url(#{$file-path}.woff2) format("woff2"),
@@ -32,7 +34,7 @@
           "#{$display-name}",
           "#{$theme-font-path}/#{$dir}/#{$filename}",
           #{$font-weight},
-          unquote("#{$font-style}")
+          string.unquote("#{$font-style}")
         );
       }
     }
@@ -58,13 +60,13 @@
     );
   }
 
-  $typeface-metadata: map-get($all-typeface-tokens, $typeface-token);
+  $typeface-metadata: map.get($all-typeface-tokens, $typeface-token);
 
   // If the typeface has src in its USWDS metadata, generate and
   // set $this-src
-  @if map-get($typeface-metadata, src) {
+  @if map.get($typeface-metadata, src) {
     $generate: true;
-    $this-src: map-get($typeface-metadata, src);
+    $this-src: map.get($typeface-metadata, src);
   }
 
   // If the typeface has custom src sefined, generate and override
@@ -75,10 +77,10 @@
   }
 
   @if $generate {
-    $display-name: map-get($typeface-metadata, display-name);
-    $roman: map-get($this-src, roman);
-    $italic: map-get($this-src, italic);
-    $dir: map-get($this-src, dir);
+    $display-name: map.get($typeface-metadata, display-name);
+    $roman: map.get($this-src, roman);
+    $italic: map.get($this-src, italic);
+    $dir: map.get($this-src, dir);
 
     @if $roman {
       @include generate-font-face(

@@ -1,3 +1,5 @@
+@use "add-background-svg";
+
 @mixin external-link(
   $external-link,
   $external-link-hover,
@@ -17,6 +19,6 @@
   }
 
   &:hover::after {
-    @include add-background-svg("#{$external-link-hover}", $image-path);
+    @include add-background-svg.add-background-svg("#{$external-link-hover}", $image-path);
   }
 }
